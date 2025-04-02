@@ -103,20 +103,6 @@ export const logout = (req, res) => {
 }
 
 
-/*
-Welcome template
-<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #f9f9f9; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDHQMmI5x5qWbOrEuJuFWkSIBQoT_fFyoKOKYqOSoIvQ&s" alt="VEXA Logo" style="display: block; margin: 0 auto; max-width: 200px; margin-bottom: 20px;">
-        <h1 style="color: #007bff; text-align: center; margin-bottom: 20px;">Welcome to VEXA!</h1>
-        <p style="font-size: 14px; margin-bottom: 20px;">Dear User,</p>
-        <p style="font-size: 14px; margin-bottom: 20px;">Thank you for choosing VEXA to manage your tasks. We're excited to have you on board and look forward to helping you be more productive.</p>
-        <p style="font-size: 14px; margin-bottom: 20px;">To get started, simply log in to your account using your email address and the password you set up during registration.</p>
-        <p style="font-size: 14px; margin-bottom: 20px;">If you have any questions or need assistance, please don't hesitate to contact our support team. We're here to help!</p>
-        <br>
-        <p style="font-size: 16px; margin-bottom: 20px;">Best regards,</p>
-        <p style="font-size: 16px; margin-bottom: 20px;">The VEXA Team</p>
-    </div> */
-
 export const generateOTP = async (req, res) => {
     req.app.locals.OTP = await otpGenerator.generate(6, { upperCaseAlphabets: false, specialChars: false, lowerCaseAlphabets: false, digits: true, });
     const { email } = req.query;
